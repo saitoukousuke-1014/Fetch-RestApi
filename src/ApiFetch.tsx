@@ -1,19 +1,26 @@
 import React, {useState, useEffect} from 'react'
 
-
 const ApiFetch = () => {
 
-    //const [posts, setPosts] = useState([])
-    let posts: any;
+    type post = {
+        id: number;
+        title: string;
+    };
 
+    const [posts, setPosts] = useState<post[]>([]);
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts', {method: 'GET'})
         .then(res => res.json())
         .then(data => {
             setPosts(data)
+            console.log(data)
         })
     },[])
+
+    // if (!posts){
+    //     <a>loading...</a>
+    // }
 
     return (
         <div>
@@ -22,6 +29,8 @@ const ApiFetch = () => {
                     posts.map(post => <li key={post.id}>{post.title}</li>)
                 }
             </ul>
+            
+            
             
         </div>
     )
