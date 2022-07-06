@@ -2,12 +2,12 @@ import React, {useState, useEffect} from 'react'
 
 const ApiFetch = () => {
 
-    type post = {
+    type postContents = {
         id: number;
         title: string;
     };
 
-    const [posts, setPosts] = useState<post[]>([]);
+    const [posts, setPosts] = useState<postContents[]>([]);
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts', {method: 'GET'})
