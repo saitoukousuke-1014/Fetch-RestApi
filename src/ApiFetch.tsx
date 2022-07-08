@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react'
+import './App.css';
+
 
 const ApiFetch = () => {
 
@@ -17,10 +19,6 @@ const ApiFetch = () => {
             console.log(data)
         })
     },[])
-
-    // if (!posts){
-    //     <a>loading...</a>
-    // }
 
     return (
         <div>
