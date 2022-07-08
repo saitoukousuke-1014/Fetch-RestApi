@@ -1,7 +1,3 @@
-/* .App {
-  text-align: center;
-} */
-
 h1 {
   font-size: 45px;
 }
@@ -42,6 +38,7 @@ ul {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
