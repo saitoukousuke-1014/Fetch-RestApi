@@ -10,6 +10,12 @@ const ApiFetch = () => {
 
     const [posts, setPosts] = useState<postContents[]>([]);
 
+    const PostItems = posts.map(post =>
+        <li key={post.id}>
+            {post.title}
+        </li>
+    );
+
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts', { method: 'GET' })
             .then(res => res.json())
@@ -21,16 +27,12 @@ const ApiFetch = () => {
 
     return (
         <div>
-            <ul className="list">
-                {
-                    posts.map(post =>
-                        <li key={post.id}>
-                            {post.title}
-                        </li>)
-                }
+            <ul>
+                {PostItems}
             </ul>
         </div>
     )
 }
+
 
 export default ApiFetch
